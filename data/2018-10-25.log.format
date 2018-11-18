@@ -1,0 +1,2 @@
+[$log_type] @ $module ($datetime) $message ($log_trace)
+
