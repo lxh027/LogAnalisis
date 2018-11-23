@@ -1,0 +1,44 @@
+<title>显示表格信息</title>
+<mata charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .m-tb {font-size: 12px;}
+        .m-tb th { background-color: #c3dde0; border: 1px solid #aaaaaa; padding: 2px; }
+        .m-tb td { background-color: #ffffff; border: 1px solid #aaaaaa; padding: 2px; }
+    </style>
+    <input type="button" value="返回"  style="margin:20px 10px 0px 1108px;height : 36px;border:1px;background-color:#00bee7;color:#fff;width:72px;border-radius: 3px;" onclick="location='{:U(\'Home/Index/showtable\')}'">
+    <input type="button" value="登出"  style="margin:20px 10px 0px 10px;height : 36px;border:1px;background-color:#00bee7;color:#fff;width:72px;border-radius: 3px;" onclick="location='{:U(\'Home/Index/index\')}'">
+    <div style="font-size:25px;font-family:微软雅黑;color:rgb(98,94,91);margin:50px 0px 50px 0px" align="center">
+        <h>{$tbname}</h>
+    </div>
+
+    <div class="panel panel-default" align="center" style="margin:0px 0px 0px 0px;">
+    <div style="font-size:10px;font-family:微软雅黑;color:rgb(98,94,91);margin:2px 0px 2px 0px" align="center">
+        字段：{$fdname},关键字：{$key},查找到{$tot}条记录，用时{$time}s
+    </div>
+    <div class="panel-body center">
+        <tr>
+            <td>
+                {$page}
+            </td>
+        </tr>
+    </div>
+    <table class="m-tb" border="1px" cellspacing="0px" width="80%">
+    <tr>
+        <for start='0' end='$columns_sum' name='i'>
+            <th>{$columns[$i]}</th>
+        </for> 
+    </tr>    
+    <for start='0' end='$count' name='i'>
+        <tr>
+            <for start='0' end='$columns_sum' name='j'>
+                <td>{$list[$i][$columns[$j]]}</td>
+            </for>
+        </tr>
+    </for>
+
+    </table>
+        <div style="height: 100px"></div>
+    </div>
