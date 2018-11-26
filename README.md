@@ -1,6 +1,6 @@
 # LogAnalisis
 ### 简介
->使用python实现日志解析器，并存入数据库MySQL中，然后在PHP端完成浏览解析后的日志以及按字段搜索功能。基本实现test要求。解析端文件为FormatAnalisis.py,PHP端入口为web_tp文件夹下index.php文件
+>使用python实现日志解析器，并存入数据库MySQL中，然后在PHP端完成浏览解析后的日志以及按字段搜索功能。基本实现test要求。解析端文件为FormatAnalisis.py，PHP端入口为web_tp文件夹下index.php文件
 
 ### 使用工具
 * 日志解析器：python 2.7 
