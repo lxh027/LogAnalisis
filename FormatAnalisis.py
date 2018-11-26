@@ -55,13 +55,12 @@ class SQL(object):
         self.__name=name+'_'+t
         self.__name=re.sub(r'[^0-9a-zA-Z]','_',self.__name)
         self.__name=re.sub(r'[^\x00-\xff]','',self.__name)
-        config={'host':'localhost','port':3306,'user':'lxh001','passwd':'19991107','db':'LOGAnalisis','charset':'utf8'}
+        config={'host':'localhost','port':3306,'user':'root','passwd':'','db':'LOGAnalisis','charset':'utf8'}
         self.__conn=MySQLdb.connect(**config)
         self.__cursor=self.__conn.cursor()
 
     def makeSQL(self):
         SQLname='LOGAnalisis'
-        self.__cursor.execute('DROP DATABASE IF EXISTS %s' %SQLname)
         self.__cursor.execute('CREATE DATABASE IF NOT EXISTS %s default charset=utf8' %SQLname)
         self.__conn.select_db(SQLname)
 
